@@ -1,5 +1,7 @@
 import time
 from funciones import agregar_material, listar_materiales, buscar_material, cargar_inventario, guardar_inventario
+
+#se carga los datos previos del inventario desde el archivo JSON
 cargar_inventario()
 
 # Función principal del menú
@@ -25,9 +27,10 @@ def menu():
         elif opcion == "4":
             print("🔄 Guardando materiales...")
             time.sleep(1)
-            try:
+            try:# Intenta guardar el inventario en un archivo JSON
                 guardar_inventario()
             except Exception as e:
+                # Si ocurre un error, imprime un mensaje de error
                 print("⚠️ Ocurrió un error al guardar los materiales.")
                 print(f"🛠️ Detalles del error: {e}")
                 
