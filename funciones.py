@@ -22,14 +22,14 @@ def agregar_material():
             print("⚠️ Opción inválida. Intente de nuevo.")
             continue
 
-        titulo = input("Título: ").strip()
-        autor = input("Autor: ").strip()
+        titulo = input("Título: ").strip()  # Título del material
+        autor = input("Autor: ").strip()    # Autor del material
 
         # Verificación: ¿ya existe un material con ese título y autor?
                 # Verificación: ¿ya existe un material del mismo tipo con ese título y autor?
-        for material in inventario:
+        for material in inventario:     
             if (
-                material.titulo.lower() == titulo.lower() and
+                material.titulo.lower() == titulo.lower() and   
                 material.autor.lower() == autor.lower() and
                 (
                     (opcion == "1" and isinstance(material, Libro)) or
@@ -67,7 +67,7 @@ def agregar_material():
 
 # Función para listar todos los materiales
 def listar_materiales():
-    if not inventario:
+    if not inventario:  # Verifica si la lista de inventario está vacía
         print("\n📭 No hay materiales registrados.")
     else:
         print("\n📚 Inventario de materiales:")
@@ -86,14 +86,16 @@ def buscar_material():
 
     for material in inventario:
         if material.titulo.lower() == titulo_buscado.lower():
-            print("\n🔍 Material encontrado:")
+            if not encontrado:
+                print("\n🔍 Material(es) encontrado(s):")
+                print("-" * 40)
+            material.mostrar_informacion()  # Mostrar información
             print("-" * 40)
-            material.mostrar_informacion()
             encontrado = True
-            break
 
     if not encontrado:
         print("❌ Material no encontrado.")
+
 
 def guardar_inventario(nombre_archivo="inventario.json"):
     datos = []
@@ -133,4 +135,3 @@ def cargar_inventario(nombre_archivo="inventario.json"):
                     inventario.append(DVD(titulo, autor, año, item["duracion"]))
     except FileNotFoundError:
         print("📂 No se encontró inventario previo. Se iniciará uno nuevo.")
-
