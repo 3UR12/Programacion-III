@@ -1,6 +1,4 @@
----
-
-```markdown
+```
 # 📚 Sistema de Gestión de Biblioteca - Programación III
 
 Bienvenido al sistema de gestión de biblioteca desarrollado en Python como parte del curso **Programación III**. Este proyecto aplica los principios de **programación orientada a objetos (POO)** y permite administrar diferentes tipos de materiales bibliográficos de forma sencilla, eficiente y visualmente amigable.
@@ -20,7 +18,7 @@ Bienvenido al sistema de gestión de biblioteca desarrollado en Python como part
 
 ## 🧱 Estructura del proyecto
 
-```bash
+```
 biblioteca/
 │
 ├── funciones.py          # Contiene las funciones principales del sistema
@@ -53,18 +51,21 @@ Todas las clases están definidas en `materiales.py` siguiendo la estructura POO
 - **MaterialBiblioteca (clase padre):**
   - Atributos comunes: `título`, `autor`, `año_publicación`
   - Método base: `mostrar_informacion()`
+
 - **Libro, Revista, DVD (subclases):**
   - Cada una añade un atributo específico:
     - `Libro`: número de páginas
     - `Revista`: número de edición
     - `DVD`: duración en minutos
+
   - Todas sobrescriben `mostrar_informacion()` para incluir su atributo adicional y tipo.
 
 ---
 
 ## 💾 Guardado de datos
 
-Los materiales son guardados automáticamente al salir del programa en el archivo `inventario.json`. Si ocurre un error durante el guardado, se informa al usuario con un mensaje detallado sin interrumpir la ejecución.
+Los materiales son guardados automáticamente al salir del programa en el archivo `inventario.json`. Si ocurre un error durante el guardado, 
+se informa al usuario con un mensaje detallado sin interrumpir la ejecución.
 
 ---
 
@@ -79,12 +80,12 @@ Los materiales son guardados automáticamente al salir del programa en el archiv
 
 1. Asegúrate de tener Python instalado.
 2. Clona este repositorio:
-   ```bash
+   ```
    git clone https://github.com/tu_usuario/biblioteca.git
    cd biblioteca
    ```
 3. Ejecuta el archivo principal:
-   ```bash
+   ```
    python main.py
    ```
 
@@ -99,6 +100,3 @@ Desarrollado por 3UR12 como parte del curso **Programación III**. Este proyecto
 ## 🐾 ¡Gracias por visitar la biblioteca virtual!
 
 ```
-
----
-
